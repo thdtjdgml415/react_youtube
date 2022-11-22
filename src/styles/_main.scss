@@ -1,0 +1,148 @@
+#main {
+  display: flex;
+  margin-top: 67px;
+
+  #aside {
+    width: 20%;
+    min-height: 100vh;
+    border-right: 1px solid var(--bg-dark-border);
+    padding: 20px;
+
+    button {
+      display: block;
+      font-size: 16px;
+      width: 80%;
+      text-align-last: left;
+      padding: 10px 0;
+      border-radius: 50px;
+      transition: all 0.5s;
+
+      span:first-child {
+        display: inline-block;
+        margin-right: 10px;
+      }
+
+      &:hover {
+        background: #fff;
+        color: #fff;
+      }
+    }
+  }
+  #contents {
+    width: 80%;
+    padding: 30px;
+
+    h2 {
+      margin-bottom: 10px;
+
+      em {
+        color: rgb(255, 110, 110);
+      }
+    }
+  }
+}
+
+.videos__inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  > div {
+    width: 24%;
+    margin-bottom: 1%;
+  }
+  .box {
+    .boxInfo {
+      .youtube__title {
+        display: block;
+        margin-bottom: 5px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+      }
+      .channelName {
+        display: block;
+        font-size: 14px;
+        color: rgb(220, 218, 171);
+      }
+    }
+  }
+}
+
+.youtube__video__inner {
+  margin-top: 100px;
+  display: flex;
+  justify-content: space-around;
+  .youtube__left {
+    width: 70%;
+
+    background: #000;
+    .youtube__video {
+      width: 100%;
+      margin-bottom: 30px;
+      position: relative;
+      padding-bottom: 27.65%;
+      iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .video__title {
+      width: 100%;
+      margin-bottom: 30px;
+      font-size: 20px;
+    }
+    .video__upload {
+      display: inline-block;
+    }
+    .video__bottom__desc {
+      display: flex;
+      justify-content: end;
+      .video__like {
+        margin-left: 20px;
+      }
+    }
+  }
+  .video__right {
+    width: 23%;
+    .videos__img {
+    }
+  }
+  .videos__desc {
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 800px) {
+  #main {
+    display: block;
+    width: 100%;
+    margin-top: 100px;
+    #aside {
+      width: 100%;
+      min-height: auto;
+    }
+    #contents {
+      width: 100%;
+      padding: 0;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .youtube__video__inner {
+    flex-wrap: wrap;
+    .youtube__left {
+      margin-bottom: 100px;
+    }
+    .video__right {
+      width: 100%;
+      height: 500px;
+    }
+  }
+} ;
