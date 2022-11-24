@@ -6,14 +6,16 @@ import { Loader } from './index'
 import { AiFillHeart } from 'react-icons/ai'
 const Asidevideo = ({ aside }) => {
   return (
-    <Link to={`/video/${aside.videoId}`}>
-      <img
-        className="videos__img"
-        src={aside.snippet?.thumbnails?.high?.url}
-        alt=""
-      />
-      <div className="videos__desc">{aside.snippet.title}</div>
-    </Link>
+    <div className="youtube__video__right">
+      <Link to={`/video/${aside.videoId}`}>
+        <img
+          className="videos__img"
+          src={aside.snippet?.thumbnails?.high?.url}
+          alt=""
+        />
+        <div className="videos__desc">{aside.snippet.title}</div>
+      </Link>
+    </div>
   )
 }
 

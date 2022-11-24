@@ -17,8 +17,9 @@ const ChannelConts = () => {
       // console.log(data?.items[0])
 
       const videosData = await fetchAPI(
-        `search?channelId=${id}&part=snippet&order=data`
+        `search?channelId=${id}&part=snippet&order=date`
       )
+      console.log(videosData)
       setVideos(videosData?.items)
     }
     fetchResults()
@@ -29,11 +30,13 @@ const ChannelConts = () => {
       <div className="channel__header">
         <img
           src={channelDetail?.brandingSettings?.image?.bannerExternalUrl}
-          alt=""
+          alt="상세페이지 배너"
         />
+        <div className="header__img">
+          <img src={channelDetail?.snippet?.thumbnails?.medium?.url} alt="" />
+        </div>
       </div>
       <div className="channel__info">
-        <img src={channelDetail?.snippet?.thumbnails?.medium?.url} alt="" />
         <h3>{channelDetail?.snippet?.title}</h3>
         <span className="view__count">
           구독자수 : {channelDetail?.statistics?.subscriberCount}명
@@ -46,7 +49,7 @@ const ChannelConts = () => {
         </span>
       </div>
       <div className="channel__videos">
-        <Videos />
+        <Videos videos={videos}></Videos>
       </div>
     </section>
   )
